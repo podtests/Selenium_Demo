@@ -6,5 +6,10 @@ pipeline {
                 echo "i am done"
             }
         }
+        stage ("test") {
+            steps{
+                mvn test
+            }
+        }
     }
 }

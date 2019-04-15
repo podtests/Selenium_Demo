@@ -3,8 +3,7 @@ pipeline {
   stages {
     stage("Build") {
       steps {
-        echo "Build stage Done"
-        echo "M2_HOME = ${M2_HOME}"
+        echo "Build stage Done"        
         }
       }
      stage("test") {

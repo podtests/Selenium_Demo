@@ -1,5 +1,6 @@
 package com.demo.selenium.automation;
 
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
 import com.demo.selenium.automation.dao.GoogleHomePage_DAO;
@@ -14,10 +15,15 @@ public class BRS_1_GoogleTest {
 	//open home page
 	@Test
 	public void TC1_testSearchFunctionality() {
-						
+		googleHomePage_POM.GoogleHomePage_POM();
 		googleHomePage_POM.openHomePage(ConfigDriver.getInstance().getProperty("url"));
 		googleHomePage_POM.fillSearchTextBox(new GoogleHomePage_DAO("protractor"));
 		//googleHomePage_POM.clickGoogleSearchButton();
 		
+	}
+
+	@AfterClass
+	public void tearDown() {
+		googleHomePage_POM.closeBrowser();
 	}
 }

@@ -12,10 +12,10 @@ public class BrowserDriver {
 	public static WebDriver getInstance() {
 		
 		if (wd == null ) {
-			
+			System.out.println("wd is null in If block");
 			 if (ConfigDriver.getInstance().getProperty("browser").equals("Chrome")) {
 				 System.out.println("In if "+ ConfigDriver.getInstance().getProperty("browser"));
-				 System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"\\Resources\\BrowserDrivers\\chromedriver.exe");				 
+				 System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"\\Resources\\Drivers\\chromedriver.exe");
 				 wd = new ChromeDriver();
 			 }
 			 else if (ConfigDriver.getInstance().getProperty("Browser") =="Firefox") {
@@ -31,6 +31,11 @@ public class BrowserDriver {
 	
 	private BrowserDriver() {
 		
+	}
+
+	public static void nullInstance() {
+		wd.close();
+		wd = null;
 	}
 	
 }

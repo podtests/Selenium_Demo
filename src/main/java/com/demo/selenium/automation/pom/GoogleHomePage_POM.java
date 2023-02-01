@@ -21,7 +21,7 @@ public class GoogleHomePage_POM {
 	
 	
 	
-	public GoogleHomePage_POM() {
+	public void GoogleHomePage_POM() {
 		
 		wd = BrowserDriver.getInstance();
 		property = PageLocatorLoader.getInstance().getPropertyInstance();
@@ -48,6 +48,13 @@ public class GoogleHomePage_POM {
 	
 	public void clickGoogleSearchButton() {
 		browser.click(wd.findElement(By.xpath(property.getProperty("GoogleSearch_Btn_xpath"))));
+	}
+
+	public void closeBrowser() {
+		//wd.close();
+		//wd = null;
+		BrowserDriver.nullInstance();
+		wd = null;
 	}
 	
 }

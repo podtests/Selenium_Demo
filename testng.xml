@@ -4,7 +4,7 @@
   <test name="Regression" >
     <classes>
        <class name="com.demo.selenium.automation.BRS_1_GoogleTest" />
-        <class name="com.demo.selenium.automation.BRS_2_GoogleTest" />
+        <class name="com.demo.selenium.automation.BRS_2_GoogleTest">
 
     </classes>
   </test>
